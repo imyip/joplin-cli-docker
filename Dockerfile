@@ -1,4 +1,8 @@
+
+ARG DENO_VERSION=1.22.0
+FROM denoland/deno:bin-$DENO_VERSION AS deno
 FROM node:16-alpine
+COPY --from=deno /deno /usr/local/bin/deno
 USER root
 RUN apk update
 RUN apk add --no-cache -U socat && rm -rf /var/cache/apk/*
