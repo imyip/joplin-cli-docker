@@ -16,6 +16,8 @@ RUN chown node:node /usr/sbin/crond \
 COPY runtime.sh /
 USER node
 
+RUN chmod +x /runtime.sh
+
 VOLUME /joplin/profile
 EXPOSE  41182
 
