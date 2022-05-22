@@ -9,5 +9,4 @@ RUN mkdir -p /joplin/profile
 COPY runtime.sh /root/
 VOLUME /joplin/profile
 EXPOSE 41182
-CMD chown root:root /etc/crontabs/root && /usr/sbin/crond -f
 ENTRYPOINT ["/root/runtime.sh"]
